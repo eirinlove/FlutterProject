@@ -33,6 +33,7 @@ class  MyHomePage extends StatelessWidget {
             Text('오늘의 점심은'),
             Text('뭘로 할까요'),
             Text('삼겹살!')
+            Text('저는 삼겹살 좋아합니다 ㅎㅎ')
           ], // 위젯을 넣어줌
         ),
       ),
