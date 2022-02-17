@@ -30,28 +30,19 @@ class  MyHomePage extends StatelessWidget {
         backgroundColor: Colors.grey, // 앱바 배경색
         elevation : 0.0, // 앱바 높이, (그림자 떠있는 정도 )
       ), 
-      body: Padding(padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
-      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+      body: Center(
+      child: Column(
       children: <Widget>[
         Text('hello'),
         Text('hello'),
         Text('hello') 
       ],
       ),
-      ),
+      )
     );
   }
 }
-
+// column 위젯을 가로축상으로 정중앙에 위치시키려면 center 위젯을,
+// 세로축으로 정중앙에 위치시키려면 column 위젯 내에서 mainAxisAlignment : MainAaxisAlignment.center, 속성 사용
 //커스텀위젯을 만들 때는 항상 stateless로 만들지, stateful로 만들지 생각해야 한다.
 
-/*/*body: Center(
-        child: Column(
-          children: <Widget>[
-            Text('오늘의 점심은'),
-            Text('뭘로 할까요'),
-            Text('삼겹살!'),
-            Text('저는 삼겹살 좋아합니다 ㅎㅎ')
-          ], // 위젯을 넣어줌
-        ),
-      ),*/
