@@ -26,19 +26,32 @@ class  MyHomePage extends StatelessWidget {
     return Scaffold(  //Scaffold는, 발판을 만들어주다, 앱 화면에 다양한 요소를 배치하고 그릴 수 있도록 도와줌
       appBar: AppBar(
         title: Text('어서오십시오'), // 화면 앱바에 출력되는 타이틀
+        centerTitle: true, // 타이틀을 가운데로
+        backgroundColor: Colors.grey, // 앱바 배경색
+        elevation : 0.0, // 앱바 높이, (그림자 떠있는 정도 )
+      ), 
+      body: Padding(padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('hello'),
+        Text('hello'),
+        Text('hello') 
+      ],
       ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Text('오늘의 점심은'),
-            Text('뭘로 할까요'),
-            Text('삼겹살!')
-            Text('저는 삼겹살 좋아합니다 ㅎㅎ')
-          ], // 위젯을 넣어줌
-        ),
       ),
     );
   }
 }
 
 //커스텀위젯을 만들 때는 항상 stateless로 만들지, stateful로 만들지 생각해야 한다.
+
+/*/*body: Center(
+        child: Column(
+          children: <Widget>[
+            Text('오늘의 점심은'),
+            Text('뭘로 할까요'),
+            Text('삼겹살!'),
+            Text('저는 삼겹살 좋아합니다 ㅎㅎ')
+          ], // 위젯을 넣어줌
+        ),
+      ),*/
