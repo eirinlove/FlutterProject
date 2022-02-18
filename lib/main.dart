@@ -1,48 +1,136 @@
+// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
-// 함수의 이름은 소문자로 시작, 클래스 이름은 대문자로 시작. (캐멀케이스)
-void main() => runApp(MyApp()); // runApp 함수 안에 widget이 들어가야함 
 
-class MyApp extends StatelessWidget {
+void main() => runApp(MyApp());
+
+class  MyApp extends StatelessWidget {
   const MyApp ({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '안녕하세요', // 앱을 총칭하는 title
-      theme: ThemeData(
-        primarySwatch: Colors.blue //색상 견본 블루 계열 음영 사용
-      ),//
-      home: MyHomePage(), // 앱이 정상적으로 실행 되었을 때, 가장 먼저 화면에 보여주는 경로
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false, //디버그 띠 없앰
+      title: 'BBANTO',
+      home: Grade(),
+      
     );
   }
 }
 
-
-class  MyHomePage extends StatelessWidget {
- const MyHomePage ({ Key? key }) : super(key: key);
+class Grade extends StatelessWidget {
+  const Grade ({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  //Scaffold는, 발판을 만들어주다, 앱 화면에 다양한 요소를 배치하고 그릴 수 있도록 도와줌
+    return Scaffold(
+      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-        title: Text('어서오십시오'), // 화면 앱바에 출력되는 타이틀
-        centerTitle: true, // 타이틀을 가운데로
-        backgroundColor: Colors.grey, // 앱바 배경색
-        elevation : 0.0, // 앱바 높이, (그림자 떠있는 정도 )
-      ), 
-      body: Center(
-      child: Column(
-      children: <Widget>[
-        Text('hello'),
-        Text('hello'),
-        Text('hello') 
-      ],
+        title: Text('BBANTO'),
+        backgroundColor: Colors.amber[700],
+        centerTitle: true,
+        elevation: 0.0,
+
       ),
-      )
+      body: Padding(padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
+            child: Column( 
+              crossAxisAlignment: CrossAxisAlignment.start, //왼쪽 정렬
+              children:  <Widget>[
+              Center(
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/Lenna.png'),
+                  radius: 60.0,
+                  
+                ),
+              ),
+              Divider(
+                height: 60.0, //Divider 위아래로 30픽셀씩
+                color: Colors.grey[850],
+                thickness: 0.5,//선 두께
+                endIndent: 30.0 ,// 선이 끝에서 어느정도 떨어져 있나?, css의 padding 속성
+              ),
+              Text('NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),),
+              SizedBox(
+                height: 10.0,
+              ),
+            Text('레이디 아메리카', 
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold
+            ),),
+
+            SizedBox(height : 30.0,),
+
+            Text('파워 레벨',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+              ),),
+              
+              SizedBox(
+                height: 10.0,
+              ),
+
+            Text('33', 
+            style: TextStyle(
+              color: Colors.white,
+              letterSpacing: 2.0,
+              fontSize: 28.0,
+              fontWeight: FontWeight.bold
+            ),),
+
+            SizedBox(height: 30.0,),
+
+            Text('Skill',
+            style: TextStyle(
+            color: Colors.white,
+            letterSpacing: 2.0,
+            fontSize: 35.0,
+            fontWeight: FontWeight.bold
+            )),
+            SizedBox(height: 10.0,),
+
+            Row(children:  <Widget>[
+              Icon(Icons.check_circle_outline),
+              SizedBox(width: 10.0,),
+              Text('강렬한 미소',
+              style: TextStyle(
+                fontSize: 16.0,
+                letterSpacing: 1.0
+              ),),
+            ],)
+            ,
+            Row(children:  <Widget>[
+              Icon(Icons.check_circle_outline),
+              SizedBox(width: 10.0,),
+              Text('서민의 힘',
+              style: TextStyle(
+                fontSize: 16.0,
+                letterSpacing: 1.0
+              ),),
+            ],)
+            ,            
+            Row(children:  <Widget>[
+              Icon(Icons.check_circle_outline),
+              SizedBox(width: 10.0,),
+              Text('독보적인 제압력',
+              style: TextStyle(
+                fontSize: 16.0,
+                letterSpacing: 1.0
+              ),),
+            ],)
+            ,
+            Center(child: CircleAvatar(backgroundImage: AssetImage('assets/Lenna.png'),
+            radius: 20.0,
+            backgroundColor: Colors.amber[800],),),
+
+            ],),),
     );
   }
 }
-// column 위젯을 가로축상으로 정중앙에 위치시키려면 center 위젯을,
-// 세로축으로 정중앙에 위치시키려면 column 위젯 내에서 mainAxisAlignment : MainAaxisAlignment.center, 속성 사용
-//커스텀위젯을 만들 때는 항상 stateless로 만들지, stateful로 만들지 생각해야 한다.
-
