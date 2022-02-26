@@ -10,7 +10,7 @@
 설계 단계 : 2월 18일 ~ 2월 28일
 개발 단계 : 3월 1일 ~ 3월 8일
 
-* 개발 플랫폼 : Flutter, Firebase, [ Nginx, Docker, RockeyLinux *변경될 수 있음 ] 
+* 개발 플랫폼 : Flutter, Firebase, [ Nginx, Docker, CentOS Stream *변경될 수 있음 ] 
  
 * library :
 
