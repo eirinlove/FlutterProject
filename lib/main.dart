@@ -90,6 +90,15 @@ class MyPage extends StatelessWidget {
                   },
                   trailing: Icon(Icons.add), 
                 ),
+                                ListTile(
+                  leading: Icon(Icons.home,
+                  color: Colors.grey[850],),
+                  title: Text('Home'),
+                  onTap : (){
+                    print('Home is clicked'); 
+                  },
+                  trailing: Icon(Icons.add), 
+                ),
             ],
             )
       ),
